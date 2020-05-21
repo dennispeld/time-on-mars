@@ -2,8 +2,24 @@
 
 namespace App\SpaceTime;
 
-interface Converter
+class Converter
 {
-    public function getDate(\DateTime $utc): string;
-    public function getTime(\DateTime $utc): string;
+    private ConverterInterface $converter;
+    private \DateTime $utc;
+
+    public function __construct(ConverterInterface $converter, \DateTime $utc)
+    {
+        $this->converter = $converter;
+        $this->utc = $utc;
+    }
+
+    public function getDate(): string
+    {
+        return $this->converter->getDate($this->utc);
+    }
+
+    public function getTime(): string
+    {
+        return $this->converter->getTime($this->utc);
+    }
 }

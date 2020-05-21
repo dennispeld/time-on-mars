@@ -4,9 +4,9 @@ declare(strict_types = 1);
 
 namespace App\MarsTime;
 
-use App\SpaceTime\Converter;
+use App\SpaceTime\ConverterInterface;
 
-class MartianDateTimeConverter implements Converter
+class MartianDateTimeConverter implements ConverterInterface
 {
     public function getDate(\DateTime $utc): string
     {

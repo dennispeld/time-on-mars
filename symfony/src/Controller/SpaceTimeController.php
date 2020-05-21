@@ -7,7 +7,6 @@ namespace App\Controller;
 use App\EarthTime\UTC;
 use App\MarsTime\MartianDateTimeConverter;
 use App\SpaceTime\Converter;
-use App\SpaceTime\ConverterFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -27,11 +26,11 @@ class SpaceTimeController extends AbstractController
     {
         try {
             $utc = new UTC();
-            $factory = new ConverterFactory(new MartianDateTimeConverter(), $utc->build($earthtime));
+            $converter = new Converter(new MartianDateTimeConverter(), $utc->build($earthtime));
 
             $data =  [
-                'mars_sol_date' => $factory->getDate(),
-                'martian_coordinated_time' => $factory->getTime(),
+                'mars_sol_date' => $converter->getDate(),
+                'martian_coordinated_time' => $converter->getTime(),
             ];
             
             $response = new Response(
