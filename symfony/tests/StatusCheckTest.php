@@ -9,7 +9,7 @@ class StatusCheckTest extends WebTestCase
     public function testServiceIsAlive() 
     {
         $client = $this->createClient();
-        $client->request('GET', '/adapter/status-check');
+        $client->request('GET', '/service/status-check');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
