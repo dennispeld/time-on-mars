@@ -1,0 +1,27 @@
+version: '3'
+services:
+    nginx:
+        container_name: billiemission-nginx
+        build:
+            context: .
+            dockerfile: ./docker/nginx/Dockerfile
+        volumes:
+            - ./symfony/:/var/www/symfony
+        ports:
+            - 8001:80
+        networks:
+            - symfony
+    php:
+        container_name: billiemission-php-fpm
+        build:
+            context: .
+            dockerfile: ./docker/php-fpm/Dockerfile
+        environment:
+            APP_ENV: dev
+        volumes:
+            - ./symfony/:/var/www/symfony/
+        networks:
+            - symfony
+
+networks:
+    symfony:
