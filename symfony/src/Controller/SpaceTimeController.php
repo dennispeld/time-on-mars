@@ -39,8 +39,11 @@ class SpaceTimeController extends AbstractController
                 ['Content-Type' => 'application/json']
             );
         } catch(\Exception $e) {
+            $data =  [
+                'error' => $e->getMessage(),
+            ];
             $response = new Response(
-                $e->getMessage(), 
+                json_encode($data),
                 self::STATUS_CODE_BAD_REQUEST, 
                 ['Content-Type' => 'application/json']
             );
