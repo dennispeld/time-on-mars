@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Tests;
+namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class ServiceUpAndRunningTest extends WebTestCase
+class StatusCheckControllerTest extends WebTestCase
 {
     public function testServiceIsAlive() 
     {
         $client = $this->createClient();
-        $client->request('GET', '/adapter/spacedatetime/i-am-alive');
+        $client->request('GET', '/adapter/status-check');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
