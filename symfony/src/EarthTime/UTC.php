@@ -1,10 +1,12 @@
 <?php
 
-namespace App\SpaceTime\Earth;
+declare(strict_types = 1);
 
-class UTC 
+namespace App\EarthTime;
+
+class UTC
 {
-    public function convert(string $dateTimeOnEarth = null): \DateTime
+    public function build(string $dateTimeOnEarth = null): \DateTime
     {
         if (!$dateTimeOnEarth) {
             $dateTimeOnEarth = 'now';

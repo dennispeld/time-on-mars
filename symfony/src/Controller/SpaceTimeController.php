@@ -1,33 +1,51 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Controller;
 
-use App\SpaceTime\Earth\UTC;
+use App\EarthTime\UTC;
+use App\MarsTime\MartianDateTimeConverter;
+use App\SpaceTime\Converter;
+use App\SpaceTime\ConverterFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/api/v1/spacetime")
+ */
 class SpaceTimeController extends AbstractController
 {
+    const STATUS_CODE_OK = 200;
+    const STATUS_CODE_BAD_REQUEST = 400;
+
     /**
-     * @Route("/api/spacetime/{earth}", name="spacetime_convert")
-     * @param string? $earth
-     * @return Response
+     * @Route("/convert/{earthtime}", name="spacetime_convert")
      */
-    public function convert(string $earth = null): Response
+    public function convert(string $earthtime = null): Response
     {
-        // todo: convert UTC datetime to mars sol date (MSD)
-        // todo: convert UTC datetime to martian coordinated time (MCT)
-        // todo: build JsonResponse using MSD and MCT
+        try {
+            $utc = new UTC();
+            $factory = new ConverterFactory(new MartianDateTimeConverter(), $utc->build($earthtime));
 
-        $utc = new UTC();
-        $now = $utc->convert($earth);
-
-        $data = ["works"=>'OK', 'now'=>$now];
-        
-        
-        $response = new Response(json_encode($data));
-        $response->headers->set('Content-Type', 'application/json');
+            $data =  [
+                'mars_sol_date' => $factory->getDate(),
+                'martian_coordinated_time' => $factory->getTime(),
+            ];
+            
+            $response = new Response(
+                json_encode($data), 
+                self::STATUS_CODE_OK, 
+                ['Content-Type' => 'application/json']
+            );
+        } catch(\Exception $e) {
+            $response = new Response(
+                $e->getMessage(), 
+                self::STATUS_CODE_BAD_REQUEST, 
+                ['Content-Type' => 'application/json']
+            );
+        }
         
         return $response;
     }
