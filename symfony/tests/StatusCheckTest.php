@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Tests\Controller;
+namespace App\Tests;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class StatusCheckControllerTest extends WebTestCase
+class StatusCheckTest extends WebTestCase
 {
     public function testServiceIsAlive() 
     {

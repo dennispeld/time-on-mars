@@ -1,7 +1,3 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
-
 status-check:
     path: /adapter/status-check
-    controller: App\Controller\StatusCheckController::check
+    controller: App\StatusCheck::check
