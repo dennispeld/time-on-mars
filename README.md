@@ -20,3 +20,9 @@ To run the application:
 
 This should build docker images and containers and run them.
 - In your browser, navigate to http://127.0.0.1:8001/
+
+## Testing
+To run tests
+- Navigate to symfony folder and run 
+
+`php bin/phpunit`

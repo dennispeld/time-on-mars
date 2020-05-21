@@ -12,7 +12,10 @@
         "symfony/yaml": "5.0.*"
     },
     "require-dev": {
+        "symfony/browser-kit": "5.0.*",
+        "symfony/css-selector": "5.0.*",
         "symfony/debug-pack": "^1.0",
+        "symfony/maker-bundle": "^1.18",
         "symfony/phpunit-bridge": "^5.0",
         "symfony/var-dumper": "5.0.*"
     },
