@@ -7,9 +7,6 @@ namespace App\MarsTime;
 use App\SpaceTime\ConverterFactory;
 use App\SpaceTime\FormatterInterface;
 
-/**
- * Format the output
- */
 final class MartianDateTimeFormatter implements FormatterInterface
 {
     private ConverterFactory $converterFactory;
