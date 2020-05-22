@@ -9,7 +9,7 @@ class SpaceTimeControllerTest extends WebTestCase
     /**
      * Test if a service is alive
      */
-    public function testServiceIsAlive() 
+    public function testServiceIsAlive()
     {
         $client = $this->createClient();
         $client->request('GET', '/service/status-check');

@@ -7,7 +7,7 @@ namespace App\EarthTime;
 use Exception;
 
 class UTC
-{   
+{
     /**
      * Convert and retrieve DateTime object from string
      */
@@ -29,7 +29,7 @@ class UTC
             }
             
             $utc->setTimezone(new \DateTimeZone('UTC'));
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             throw new Exception('The datetime format is wrong.');
         }
 
@@ -41,9 +41,8 @@ class UTC
      */
     public static function isTimestamp(string $dateTimeOnEarth)
     {
-        return ((string) (int) $dateTimeOnEarth === $dateTimeOnEarth) 
+        return ((string) (int) $dateTimeOnEarth === $dateTimeOnEarth)
             && ($dateTimeOnEarth <= PHP_INT_MAX)
             && ($dateTimeOnEarth >= ~PHP_INT_MAX);
     }
-    
 }

@@ -40,14 +40,14 @@ class SpaceTimeController extends AbstractController
             );
             
             $response = new Response(
-                $formatterFactory->getFormattedOutputAsJsonString(), 
-                self::STATUS_CODE_OK, 
+                $formatterFactory->getFormattedOutputAsJsonString(),
+                self::STATUS_CODE_OK,
                 $this->responseHeader
             );
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             $response = new Response(
                 SpaceTimeError::getErrorOutputAsJsonString($e),
-                self::STATUS_CODE_BAD_REQUEST, 
+                self::STATUS_CODE_BAD_REQUEST,
                 $this->responseHeader
             );
         }

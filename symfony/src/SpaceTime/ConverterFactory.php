@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace App\SpaceTime;
 
 /**
- * Factory, that takes any Converter class, that implements 
+ * Factory, that takes any Converter class, that implements
  * ConverterInterface and calls its methods
  */
 class ConverterFactory
