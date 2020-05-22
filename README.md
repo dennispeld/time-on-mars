@@ -84,6 +84,10 @@ To run tests
 
 `php bin/phpunit`
 
+You should see the following results:
+
+```OK (13 tests, 26 assertions)```
+
 ## Credits
 **Author**: Dennis Peld  
 **Date**: 23.05.2020  
