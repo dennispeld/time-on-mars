@@ -2,7 +2,7 @@
 
 namespace App\SpaceTime;
 
-class Formatter
+class FormatterFactory
 {
     private FormatterInterface $formatter;
 

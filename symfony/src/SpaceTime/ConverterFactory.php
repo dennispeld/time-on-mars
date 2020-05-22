@@ -2,7 +2,7 @@
 
 namespace App\SpaceTime;
 
-class Converter
+class ConverterFactory
 {
     private ConverterInterface $converter;
 

@@ -7,8 +7,8 @@ namespace App\Controller;
 use App\EarthTime\UTC;
 use App\MarsTime\MartianDateTimeConverter;
 use App\MarsTime\MartianDateTimeFormatter;
-use App\SpaceTime\Converter;
-use App\SpaceTime\Formatter;
+use App\SpaceTime\ConverterFactory;
+use App\SpaceTime\FormatterFactory;
 use App\SpaceTime\SpaceTimeError;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,16 +30,16 @@ class SpaceTimeController extends AbstractController
     public function convert(string $earthtime = null): Response
     {
         try {
-            $converter = new Converter(
+            $converterFactory = new ConverterFactory(
                 new MartianDateTimeConverter(UTC::getUTC($earthtime))
             );
 
-            $formatter = new Formatter(
-                new MartianDateTimeFormatter($converter)
+            $formatterFactory = new FormatterFactory(
+                new MartianDateTimeFormatter($converterFactory)
             );
             
             $response = new Response(
-                $formatter->getFormattedOutputAsJsonString(), 
+                $formatterFactory->getFormattedOutputAsJsonString(), 
                 self::STATUS_CODE_OK, 
                 $this->responseHeader
             );
