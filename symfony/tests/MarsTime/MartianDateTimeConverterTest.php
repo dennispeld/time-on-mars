@@ -8,6 +8,9 @@ use PHPUnit\Framework\TestCase;
 
 class MartianDateTimeConverterTest extends TestCase
 {
+    /**
+     * Test if given date in UTC is converted to MSD as expexted
+     */
     public function testCalculationOfMarsSolDay()
     {
         $dateWithTime = '24.06.1983 17:24:38';
@@ -26,6 +29,9 @@ class MartianDateTimeConverterTest extends TestCase
         $this->assertEquals('52039.50477', $converter->getDate());
     }
 
+    /**
+     * Test if given date in UTC is converted to MTC as expected
+     */
     public function testCalculationOfMartianCoordinatedTime()
     {
         $dateWithTime = '24.06.1983 17:24:38';

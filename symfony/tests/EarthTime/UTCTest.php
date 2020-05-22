@@ -7,6 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class UTCTest extends TestCase
 {
+    /**
+     * Test if datetime or timestamp string can be converted to DateTime
+     */
     public function testConvertStringToDateTime()
     {
         $timestamp = '1590141800';
@@ -18,6 +21,9 @@ class UTCTest extends TestCase
         $this->assertEquals(new \DateTime($date), UTC::getUTC($date));
     }
 
+    /**
+     * Test if given string is a valid timestamp
+     */
     public function testTimestamp()
     {
         $timestamp = '1590141800';
