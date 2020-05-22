@@ -79,6 +79,9 @@ This should build docker images and containers and run them. Now, open your brow
 
 
 ### Testing
+To test the solution, I have added functional and unit tests under /tests folder. The folder structure for tests is identical to the one in /src folder.
+Each class from /src has it's own test class in /tests.
+
 To run tests
 - Navigate to symfony folder and run 
 
@@ -86,7 +89,7 @@ To run tests
 
 You should see the following results:
 
-```OK (13 tests, 26 assertions)```
+**OK (13 tests, 26 assertions)**
 
 ## Credits
 **Author**: Dennis Peld  
