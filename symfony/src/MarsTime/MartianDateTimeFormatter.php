@@ -1,10 +1,15 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\MarsTime;
 
 use App\SpaceTime\ConverterFactory;
 use App\SpaceTime\FormatterInterface;
 
+/**
+ * Format the output
+ */
 final class MartianDateTimeFormatter implements FormatterInterface
 {
     private ConverterFactory $converterFactory;
@@ -14,6 +19,9 @@ final class MartianDateTimeFormatter implements FormatterInterface
         $this->converterFactory = $converterFactory;
     }
 
+    /**
+     * Build a Json string with the calculated data from the converter factory
+     */
     public function getFormattedOutputAsJsonString(): string
     {
         $output = [

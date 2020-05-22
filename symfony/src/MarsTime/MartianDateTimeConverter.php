@@ -6,6 +6,12 @@ namespace App\MarsTime;
 
 use App\SpaceTime\ConverterInterface;
 
+/**
+ * Convert UTC DateTime on Earth to MSD and MTC on Mars
+ * @see https://www.giss.nasa.gov/tools/mars24/help/algorithm.html
+ * @see https://en.wikipedia.org/wiki/Timekeeping_on_Mars#Formulas_to_compute_MSD_and_MTC
+ * @see http://jtauber.github.io/mars-clock/
+ */
 final class MartianDateTimeConverter implements ConverterInterface
 {
     const SECONDS_IN_DAY = 86400;
@@ -40,6 +46,7 @@ final class MartianDateTimeConverter implements ConverterInterface
      */
     public function getTime(): string
     {
+        // To avoid calling getDate() method twice, I can utilize an existing result
         if (!$this->marsSolDate) {
             $this->marsSolDate = $this->getDate();
         }

@@ -30,10 +30,12 @@ class SpaceTimeController extends AbstractController
     public function convert(string $earthtime = null): Response
     {
         try {
+            // provide the desired converter to the converter factory
             $converterFactory = new ConverterFactory(
                 new MartianDateTimeConverter(UTC::getUTC($earthtime))
             );
 
+            // provide the desired formatter to the formatter factory
             $formatterFactory = new FormatterFactory(
                 new MartianDateTimeFormatter($converterFactory)
             );

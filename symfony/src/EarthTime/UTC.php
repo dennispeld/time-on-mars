@@ -4,11 +4,13 @@ declare(strict_types = 1);
 
 namespace App\EarthTime;
 
-use DateTimeImmutable;
 use Exception;
 
 class UTC
 {   
+    /**
+     * Convert and retrieve DateTime object from string
+     */
     public static function getUTC(string $dateTimeOnEarth = null): \DateTime
     {
         // if no datetime was specified, set it to current datetime
