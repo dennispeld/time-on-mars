@@ -9,6 +9,9 @@ use PHPUnit\Framework\TestCase;
 
 class ConverterFactoryTest extends TestCase
 {
+    /**
+     * Test if given date in UTC is converted to MSD as expexted using factory
+     */
     public function testFactoryRetrievesDateByConverter()
     {
         $timestamp = '1590160721';
@@ -18,6 +21,9 @@ class ConverterFactoryTest extends TestCase
         $this->assertEquals('52039.50477', $factory->getDate());
     }
 
+    /**
+     * Test if given date in UTC is converted to MTC as expected using factory
+     */
     public function testFactoryRetrievesTimeByConverter()
     {
         $timestamp = '1590160721';

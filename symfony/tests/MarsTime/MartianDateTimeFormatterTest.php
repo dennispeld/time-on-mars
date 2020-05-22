@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 class MartianDateTimeFormatterTest extends TestCase
 {
     /**
-     * Test if formatter retrieves the expected data in Json string
+     * Test if formatter retrieves the expected data as Json string
      */
     public function testOutputFormatAsJsonString()
     {

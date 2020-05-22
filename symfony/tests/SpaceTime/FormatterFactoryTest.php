@@ -11,6 +11,9 @@ use PHPUnit\Framework\TestCase;
 
 class FormatterFactoryTest extends TestCase
 {
+    /**
+     * Test if formatter factory retrieves the expected data as Json string
+     */
     public function testFormatterOutput()
     {
         $timestamp = '1590141800';

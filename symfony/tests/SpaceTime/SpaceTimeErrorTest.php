@@ -7,6 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class SpaceTimeErrorTest extends TestCase
 {
+    /**
+     * Test if exception is retrieves as json string
+     */
     public function testErrorOutputAsJsonString()
     {
         $exception = new \Exception('Exceptional exception', 400);
