@@ -20,12 +20,11 @@ final class MartianDateTimeConverter implements ConverterInterface
     const MARTIAN_DAY_TO_EARTH_DAY_RATIO = 1.0274912517;
 
     private \DateTime $utc;
-    private $marsSolDate;
+    private $marsSolDate = null;
     
     public function __construct(\DateTime $utc)
     {
         $this->utc = $utc;
-        $this->marsSolDate = null;
     }
     
     /**
