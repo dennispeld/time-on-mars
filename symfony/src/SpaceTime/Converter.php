@@ -5,21 +5,19 @@ namespace App\SpaceTime;
 class Converter
 {
     private ConverterInterface $converter;
-    private \DateTime $utc;
 
-    public function __construct(ConverterInterface $converter, \DateTime $utc)
+    public function __construct(ConverterInterface $converter)
     {
         $this->converter = $converter;
-        $this->utc = $utc;
     }
 
     public function getDate(): string
     {
-        return $this->converter->getDate($this->utc);
+        return $this->converter->getDate();
     }
 
     public function getTime(): string
     {
-        return $this->converter->getTime($this->utc);
+        return $this->converter->getTime();
     }
 }
