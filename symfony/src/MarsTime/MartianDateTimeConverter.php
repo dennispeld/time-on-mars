@@ -8,6 +8,7 @@ use App\SpaceTime\ConverterInterface;
 
 /**
  * Convert UTC DateTime on Earth to MSD and MTC on Mars
+ *
  * @see https://www.giss.nasa.gov/tools/mars24/help/algorithm.html
  * @see https://en.wikipedia.org/wiki/Timekeeping_on_Mars#Formulas_to_compute_MSD_and_MTC
  * @see http://jtauber.github.io/mars-clock/
