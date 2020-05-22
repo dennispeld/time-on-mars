@@ -39,7 +39,7 @@ class UTC
     /**
      * Check if the given string is a valid timestamp
      */
-    private static function isTimestamp(string $dateTimeOnEarth)
+    public static function isTimestamp(string $dateTimeOnEarth)
     {
         return ((string) (int) $dateTimeOnEarth === $dateTimeOnEarth) 
             && ($dateTimeOnEarth <= PHP_INT_MAX)
