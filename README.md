@@ -67,16 +67,15 @@ To run the application:
 
 `docker-compose up`
 
-This should build docker images and containers and run them. Now, open your browser, and check the following requests: 
-
-- http://localhost:8001/api/v1/spacetime/convert/24.06.2019
-- http://localhost:8001/api/v1/spacetime/convert/24-06-2019
-- http://localhost:8001/api/v1/spacetime/convert/24.06.2019%2014:20:59 (could be also a space instead of %20)
-- http://localhost:8001/api/v1/spacetime/convert/1590141800 (timestamp)
-- http://localhost:8001/api/v1/spacetime/convert/now (current date time)
-- http://localhost:8001/api/v1/spacetime/convert/ (also current date time)
-- http://localhost:8001/api/v1/spacetime/convert/sdfsdfsfsdf (error message)
-
+This should build docker images and containers and run them. Now, open your browser, and type http://localhost:8001/api/doc.
+That should open a swagger page with simple visualization of the API with only one GET method. Now, click on "Try it out" button
+and execute some date time values, for example:
+- 24.06.2019
+- 24-06-2002
+- 01.12.1999 14:20:59
+- 1590141800 (UNIX timestamp)
+- now (default value)
+- sdfsdfsfsdf (error message)
 
 ### Testing
 To test the solution, I have added functional and unit tests under /tests folder. The folder structure for tests is identical to the one in /src folder.
