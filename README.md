@@ -65,7 +65,7 @@ To run the application:
 
 `docker-compose up`
 
-This should build docker images and containers and run them. Now, open your browser, and type http://localhost:8001/api/doc.
+Now, open your browser, and type http://localhost:8001/api/doc.
 That should open a swagger page with simple visualization of the API with only one GET method. Now, click on "Try it out" button
 and execute some date time values, for example:
 - 24.06.2019

@@ -12,7 +12,6 @@ use App\SpaceTime\FormatterFactory;
 use App\SpaceTime\SpaceTimeError;
 use Swagger\Annotations as SWG;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -89,13 +88,5 @@ class SpaceTimeController extends AbstractController
         }
         
         return $response;
-    }
-
-    /**
-     * This is only to use in tests to check if the service is alive
-     */
-    public function statusCheck(Request $request): Response
-    {
-        return new Response("OK");
     }
 }
