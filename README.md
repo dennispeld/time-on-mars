@@ -57,7 +57,7 @@ in the **SpaceTimeController**.
 ### Instructions
 To run the application:
 - Clone the repository
-- Navigate to symfony folder and install composer packages, build and run docker-compose with these 3 commands:
+- Navigate to symfony folder and install composer packages, build docker images and containers using docker-compose with these 3 commands:
 
 `composer install`
 
