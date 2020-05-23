@@ -4,8 +4,6 @@ declare(strict_types = 1);
 
 namespace App\EarthTime;
 
-use Exception;
-
 class UTC
 {
     /**
@@ -30,7 +28,7 @@ class UTC
             
             $utc->setTimezone(new \DateTimeZone('UTC'));
         } catch (\Exception $e) {
-            throw new Exception('The datetime format is wrong.');
+            throw new \Exception('The datetime format is wrong.');
         }
 
         return $utc;
