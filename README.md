@@ -57,11 +57,9 @@ in the **SpaceTimeController**.
 ### Instructions
 To run the application:
 - Clone the repository
-- Navigate to symfony folder and install composer packages
+- Navigate to symfony folder and install composer packages, build and run docker-compose with these 3 commands:
 
 `composer install`
-
-- Navigate to root and run
 
 `docker-compose build`
 
@@ -81,8 +79,7 @@ and execute some date time values, for example:
 To test the solution, I have added functional and unit tests under /tests folder. The folder structure for tests is identical to the one in /src folder.
 Each class from /src has it's own test class in /tests.
 
-To run tests
-- Navigate to symfony folder and run 
+To run tests, navigate to symfony folder and run 
 
 `php bin/phpunit`
 
