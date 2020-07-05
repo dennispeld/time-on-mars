@@ -1,30 +1,9 @@
-# Billie Mission
-A home assignment for Billie.
+# time-on-mars
+One of the fundamental problems of space missions is a time synchronization between Earth and Space. The time on Mars and Earth is ticking differently and it is necessary to keep it under control. Here are some useful links: [one](https://www.eecis.udel.edu/~mills/missions.html), [two](https://www.giss.nasa.gov/tools/mars24/help/algorithm.html), [three](http://ops-alaska.com/time/index.htm).
 
-## Task 1: Research
-Think about problems our Martian business may face in 2120: Oxygen supply, Marketing,
-Vegetables for the Team, Accounting...whatever.
-Take your time. Use Google. Do a research about the topic. Write down all the problems you
-came up with, and potential solutions to each of them.
+The project is a microservice, that should receive the time on Earth in UTC as an input and return two values: the Mars Sol Date (MSD) and the Martian Coordinated Time (MTC).
 
-### Research results
-Todo.
-
-## Task 2: Problem solving
-One of the fundamental problems of space missions is a time synchronization between Earth
-and Space. The time on Mars and Earth is ticking differently and it is necessary to keep it under
-control. Here are some useful links: [one](https://www.eecis.udel.edu/~mills/missions.html), 
-[two](https://www.giss.nasa.gov/tools/mars24/help/algorithm.html), 
-[three](http://ops-alaska.com/time/index.htm).
-
-You need to write a microservice that we will install on our spaceships, satellites and in the
-Billie Mars office in 2120.
-
-That microservice should receive the time on Earth in UTC as an input and return two values:
-the Mars Sol Date (MSD) and the Martian Coordinated Time (MTC).
-
-You can use any PHP framework but don’t forget to cover it by tests, because we don’t want
-our astronauts’ lives to depend on something untested.
+You can use any PHP framework but don’t forget to cover it by tests, because we don’t want our astronauts’ lives to depend on something untested.
 
 ### Solution
 I have set up Docker to containerize my Symfony project.
@@ -39,7 +18,7 @@ unacceptable date and time, the error will be retrieved in a json format.
 - **SpaceTime** - that's is where the fun part begins. *ConverterInterface* and *FormatterInterface* are interfaces that tells
 what the program is expecting to be implemented. *ConverterFactory* and *FormatterFactory* are general factories, that 
 accept the classes which implemented the interfaces and call their methods. This allows to add other converters and formatters
-in the future, perhaps to calculate dates and times in another planets, where Billie would like to open new offices.
+in the future, perhaps to calculate dates and times in another planets.
 *SpaceTimeErrorInterface* and *SpaceTimeError* are just here to output nicely exceptions in a Json string format.
 - **MarsTime** - has the Mars-specific converter and formatter, the classes that implement interfaces from SpaceTime. 
 *MartianDateTimeConverter* calculates and retrieves MSD and MTC according to NASA algorythm. *MartianDateTimeFormatter* combines
