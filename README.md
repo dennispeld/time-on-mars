@@ -44,13 +44,13 @@ To run the application:
 
 `docker-compose build`
 
-`docker-compose up`
+`docker-compose up -d`
 
 - Make sure the containers with suffixes *_nginx* and *_php* are up and running:
 
 `docker ps -a`
 
-Now, open your browser, and type http://localhost:8001/api/doc.
+Now, open your browser, and type http://localhost:8000/api/doc.
 That should open a swagger page with simple visualization of the API with only one GET method. Now, click on "Try it out" button
 and execute some date time values, for example:
 - 24.06.2019

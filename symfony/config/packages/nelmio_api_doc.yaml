@@ -1,7 +1,7 @@
 nelmio_api_doc:
     documentation:
         info:
-            title: Billie Mission 2120
+            title: Mission on Mars 2120
             description: A microservice to convert UTC date time on Earth to MSD and MTC on Mars.
             version: V1
     areas:
